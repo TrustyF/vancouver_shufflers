@@ -1,0 +1,24 @@
+@import './base.css';
+
+#app {
+  /*todo might break layout in the future, disable flex*/
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  max-width: 1280px;
+  /*min-width: 500px;*/
+  margin: 0 auto;
+  padding: 0 2rem 0 2rem;
+  font-weight: normal;
+  min-height: 100vh;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

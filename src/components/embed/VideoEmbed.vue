@@ -1,0 +1,76 @@
+<script setup>
+import {inject, onMounted, watch, ref, computed} from "vue";
+
+import video_0 from "/src/assets/videos/insta_2.mp4";
+import video_1 from "/src/assets/videos/insta_4.mp4";
+import video_2 from "/src/assets/videos/insta_5.mp4";
+import video_3 from "/src/assets/videos/insta_6.mp4";
+import video_4 from "/src/assets/videos/insta_7.mp4";
+import video_5 from "/src/assets/videos/insta_8.mp4";
+
+let props = defineProps({
+  test: {
+    type: String,
+    default: null,
+  },
+});
+let emits = defineEmits(["test"]);
+const curr_api = inject("curr_api");
+
+let curr_video = ref('')
+let height = '800px'
+
+function sel_rand() {
+  let arr = [
+    video_0,
+    video_1,
+    video_2,
+    video_3,
+    video_4,
+    video_5,
+  ]
+
+  curr_video.value = arr[Math.floor(Math.random() * arr.length)];
+  console.log('selecting',curr_video.value)
+}
+
+onMounted(() => {
+  sel_rand()
+})
+</script>
+
+<template>
+  <div class="spacer"></div>
+  <div class="video_embed_wrapper">
+    <video-background
+        :src="curr_video"
+        :loop="false"
+        @ended="sel_rand"
+        :style="`height:${height};width: 100%`"
+        class="video_embed"
+        transition="transition: opacity 1s;"
+        playsWhen="canplaythrough"
+    >
+    </video-background>
+  </div>
+</template>
+
+<style scoped>
+.spacer {
+  height: v-bind(height);
+}
+
+.video_embed_wrapper {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: v-bind(height);
+}
+
+.video_embed {
+  -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0)));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%);
+}
+</style>
