@@ -7,6 +7,8 @@ import video_2 from "/src/assets/videos/insta_5.mp4";
 import video_3 from "/src/assets/videos/insta_6.mp4";
 import video_4 from "/src/assets/videos/insta_7.mp4";
 import video_5 from "/src/assets/videos/insta_8.mp4";
+import video_6 from "/src/assets/videos/insta_9.mp4";
+import video_7 from "/src/assets/videos/insta_10.mp4";
 
 let props = defineProps({
   test: {
@@ -28,6 +30,8 @@ function sel_rand() {
     video_3,
     video_4,
     video_5,
+    video_6,
+    video_7,
   ]
 
   curr_video.value = arr[Math.floor(Math.random() * arr.length)];
@@ -57,7 +61,7 @@ onMounted(() => {
 
 <style scoped>
 .spacer {
-  height: v-bind(height);
+  height: 600px;
 }
 
 .video_embed_wrapper {
