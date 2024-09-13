@@ -14,9 +14,9 @@ const curr_api = inject("curr_api");
 
 <template>
   <div class="text_block">
-    <h1>About</h1>
+    <h1>YVR Shufflers</h1>
     <p>
-      YVR Shufflers is Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
+      Join Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
       and grow the art of shuffle.
       Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
     </p>

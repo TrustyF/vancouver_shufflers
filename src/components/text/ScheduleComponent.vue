@@ -14,13 +14,13 @@ const curr_api = inject("curr_api");
 </script>
 
 <template>
-  <div class="text_block">
-    <h1>Shedule</h1>
+  <div class="text_block" id="schedule_anchor">
+    <h1>Schedule</h1>
 
     <div style="margin-bottom: 10px">
       <p>
         Meetups happen every <strong>wednesday</strong> from <strong>6 to 8 pm</strong> at Robson Square ice rink
-        or the <strong style="color: #ff0088">red coil statue</strong> up the stairs
+        or the <strong style="color: #ff0090">red coil statue</strong> up the stairs
       </p>
     </div>
 
@@ -48,6 +48,6 @@ const curr_api = inject("curr_api");
 .text_block strong {
   font-weight: 800;
   padding: 2px;
-  color: #4785ff;
+  color: #80aaff;
 }
 </style>

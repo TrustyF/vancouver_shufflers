@@ -4,7 +4,7 @@ import {inject, onMounted, watch, ref, computed, onBeforeMount} from "vue";
 import video_0 from "/src/assets/videos/insta_2.mp4";
 import video_1 from "/src/assets/videos/insta_4.mp4";
 import video_2 from "/src/assets/videos/insta_5.mp4";
-import video_3 from "/src/assets/videos/insta_6.mp4";
+import video_3 from "/src/assets/videos/stabilized/insta_2.mp4";
 import video_4 from "/src/assets/videos/insta_7.mp4";
 import video_5 from "/src/assets/videos/insta_8.mp4";
 import video_6 from "/src/assets/videos/insta_9.mp4";
@@ -58,6 +58,7 @@ onBeforeMount(() => {
         :src="curr_video"
         :loop="false"
         @ended="sel_rand"
+        @playing="video_player.player.pause()"
         :style="`height:${height};width: 100%`"
         class="video_embed"
         playsWhen="canplaythrough"

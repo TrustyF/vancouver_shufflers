@@ -1,16 +1,18 @@
 <script setup>
-import FacebookEmbed from "@/components/embed/FacebookEmbed.vue";
-import MapEmbed from "@/components/embed/MapEmbed.vue";
 import VideoEmbed from "@/components/embed/VideoEmbed.vue";
-import ScheduleComponent from "@/components/generic/text/ScheduleComponent.vue";
-import AboutComponent from "@/components/generic/text/AboutComponent.vue";
+import ScheduleComponent from "@/components/text/ScheduleComponent.vue";
+import AboutComponent from "@/components/text/AboutComponent.vue";
+import TeachersComponent from "@/components/text/TeachersComponent.vue";
+import MediaComponent from "@/components/text/MediaComponent.vue";
 </script>
 
 <template>
   <video-embed/>
   <div class="feed">
     <about-component/>
+    <teachers-component/>
     <schedule-component/>
+    <media-component/>
   </div>
 </template>
 

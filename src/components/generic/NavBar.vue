@@ -13,56 +13,70 @@ let props = defineProps({
 
 let is_mobile = inject('is_mobile')
 
+function scroll_to(className) {
+  let elem = window.document.getElementById(className)
+  elem.scrollIntoView({behavior: 'smooth'})
+}
+
 </script>
 
 <template>
   <nav id="nav_bar">
-    <img :src="Logo_full" class="logo_full">
-    <div class="nav_link_wrapper">
-<!--      <RouterLink class="nav_link" to="/">Home</RouterLink>-->
-    </div>
+    <img :src="Logo_full" class="logo_full" alt="logo">
+    <p class="nav_link" @click="scroll_to('teacher_anchor')">Teachers</p>
+    <p class="nav_link" @click="scroll_to('schedule_anchor')">Schedule</p>
+    <p class="nav_link" @click="scroll_to('media_anchor')">Media</p>
   </nav>
 </template>
 
 <style scoped>
 nav {
   z-index: 1000;
-  margin-bottom: 20px;
+
   position: relative;
-  font-family: "Work Sans", sans-serif;
   display: flex;
   flex-flow: row;
   justify-content: flex-start;
   align-items: center;
-  gap: 100px;
+
+  gap: 20px;
   height: 130px;
 }
+
 .logo_full {
   object-fit: contain;
   height: 100%;
   padding: 20px;
   filter: invert();
 }
-.nav_link_wrapper {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-}
 
 .nav_link {
-  text-decoration: underline #181818;
-  text-underline-offset: 10px;
-  /*color: hsl(160, 51%, 31%);*/
+  color: white;
   padding: 40px;
-  font-size: 1.2em;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.router-link-active {
+.nav_link:hover {
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 1000px) {
 }
 
 @media only screen and (max-width: 660px) {
+  nav {
+    flex-flow: column;
+  }
+  .nav_link {
+    visibility: hidden;
+  }
+  .logo_full {
+    width: 100%;
+    height: unset;
+  }
 }
 </style>
