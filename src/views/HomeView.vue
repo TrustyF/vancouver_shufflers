@@ -2,15 +2,15 @@
 import FacebookEmbed from "@/components/embed/FacebookEmbed.vue";
 import MapEmbed from "@/components/embed/MapEmbed.vue";
 import VideoEmbed from "@/components/embed/VideoEmbed.vue";
-import BodyComponent from "@/components/generic/BodyComponent.vue";
-import MapComponent from "@/components/generic/MapComponent.vue";
+import ScheduleComponent from "@/components/generic/text/ScheduleComponent.vue";
+import AboutComponent from "@/components/generic/text/AboutComponent.vue";
 </script>
 
 <template>
   <video-embed/>
   <div class="feed">
-    <body-component/>
-    <map-component/>
+    <about-component/>
+    <schedule-component/>
   </div>
 </template>
 

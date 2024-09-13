@@ -19,10 +19,8 @@ const curr_api = inject("curr_api");
 
     <div style="margin-bottom: 10px">
       <p>
-        Meetups happen every <strong>wednesday</strong> from <strong>6 to 8 pm</strong> at Robson Square ice rink.
-      </p>
-      <p style="color: #b3b3b3;font-size: 0.8em">
-        If you can't find us check the <strong style="color: #b3005f">red coil statue</strong> up the stairs
+        Meetups happen every <strong>wednesday</strong> from <strong>6 to 8 pm</strong> at Robson Square ice rink
+        or the <strong style="color: #ff0088">red coil statue</strong> up the stairs
       </p>
     </div>
 
@@ -49,7 +47,7 @@ const curr_api = inject("curr_api");
 
 .text_block strong {
   font-weight: 800;
-  padding: 5px;
-  color: #3e73dd;
+  padding: 2px;
+  color: #4785ff;
 }
 </style>
