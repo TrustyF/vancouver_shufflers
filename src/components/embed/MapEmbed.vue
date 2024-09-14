@@ -17,6 +17,7 @@ let google_api = import.meta.env.VITE_GOOGLE_MAP_API
 
 <template>
   <iframe
+        title="google_maps"
           height="450"
           style="border:0"
           loading="lazy"

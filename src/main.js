@@ -10,6 +10,8 @@ import axios from 'axios';
 
 import {Plugin} from '/src/scripts/vue-responsive-video-background-player.mjs'
 
+import VueLazyload from "vue-lazyload";
+
 const app = createApp(App)
 
 axiosRetry(axios, {
@@ -18,6 +20,11 @@ axiosRetry(axios, {
     onRetry: ((retryCount, error) => console.log('retry', retryCount, error.message, error.code)),
     retryCondition: ((error) => true)
 });
+
+app.use(VueLazyload, {
+    preLoad: 1,
+    lazyComponent: true,
+})
 
 app.use(router)
 app.use(Plugin)

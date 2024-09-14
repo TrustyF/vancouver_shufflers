@@ -1,5 +1,6 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
+import {openNewTab} from "@/scripts/helpers.js";
 
 let props = defineProps({
   test: {
@@ -13,32 +14,59 @@ const curr_api = inject("curr_api");
 </script>
 
 <template>
-  <div class="text_block" id="links_anchor">
-    <h1>Links</h1>
-    <p>
-      YVR Shufflers is Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
-      and grow the art of shuffle.
-      Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
-    </p>
+  <div class="links_wrapper" id="links_anchor">
+    <div @click="openNewTab('https://www.instagram.com/yvrshufflers/')" class="insta_bg">
+      <p class="bi-instagram insta_btn">Instagram</p>
+    </div>
+    <div @click="openNewTab('https://www.instagram.com/yvrshufflers/')" class="fb_bg">
+      <p class="bi-facebook insta_btn">Facebook</p>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.text_block {
+.links_wrapper {
   display: flex;
-  flex-flow: column;
+  flex-flow: row wrap;
   gap: 10px;
-}
-.text_block h1 {
-  font-weight: 800;
+  align-items: flex-start;
+  /*justify-content: space-evenly;*/
 }
 
-.text_block p {
-  font-weight: 300;
-  line-height: 1.8em;
-  color: #d9d9d9;
+.insta_bg {
+  border-radius: 30px;
+  padding: 2px;
+  background-image: linear-gradient(to left top, rgb(131, 58, 180), rgb(253, 29, 29), rgb(252, 176, 69));
 }
-.text_block strong {
-  font-weight: 500;
+
+.fb_bg {
+  border-radius: 30px;
+  padding: 2px;
+  background: #00c6ff;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.insta_btn {
+  display: flex;
+  flex-flow: row;
+  gap: 5px;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+
+  font-weight: 800;
+  font-size: 0.7em;
+  white-space: nowrap;
+  text-transform: uppercase;
+
+  padding: 15px;
+  border-radius: 30px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 100ms ease-in-out;
+}
+
+.insta_btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 </style>

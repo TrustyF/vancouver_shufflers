@@ -1,6 +1,7 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
 import CarouselComponent from "@/components/generic/CarouselComponent.vue";
+import LinksComponent from "@/components/text/LinksComponent.vue";
 
 let props = defineProps({
   test: {
@@ -32,8 +33,6 @@ const curr_api = inject("curr_api");
     <p style="margin-top: 15px;color: white;font-weight: 400">
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
-
-    <carousel-component/>
 
   </div>
 </template>
