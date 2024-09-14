@@ -1,5 +1,6 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
+import CarouselComponent from "@/components/generic/CarouselComponent.vue";
 
 let props = defineProps({
   test: {
@@ -16,7 +17,8 @@ const curr_api = inject("curr_api");
   <div class="text_block">
     <h1>YVR Shufflers</h1>
     <p>
-      Join Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
+      Join Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to
+      celebrate
       and grow the art of shuffle.<br>
       Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
     </p>
@@ -30,6 +32,9 @@ const curr_api = inject("curr_api");
     <p style="margin-top: 15px;color: white;font-weight: 400">
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
+    <p></p>
+    <carousel-component/>
+
   </div>
 </template>
 
@@ -39,6 +44,7 @@ const curr_api = inject("curr_api");
   flex-flow: column;
   gap: 10px;
 }
+
 .text_block h1 {
   font-weight: 800;
 }

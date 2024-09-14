@@ -32,3 +32,4 @@ coverage
 /src/assets/videos/
 /.vscode/
 /.firebase/
+/package-lock.json

@@ -7,7 +7,7 @@ import router from './router'
 import axiosRetry from 'axios-retry';
 import axios from 'axios';
 
-import {Plugin} from 'vue-responsive-video-background-player'
+import {Plugin} from '/src/scripts/vue-responsive-video-background-player.mjs'
 
 const app = createApp(App)
 

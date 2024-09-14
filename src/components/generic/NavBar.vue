@@ -22,7 +22,6 @@ function scroll_to(className) {
 <template>
   <nav id="nav_bar">
     <img :src="Logo_full" class="logo_full" alt="logo">
-    <p class="nav_link" @click="scroll_to('media_anchor')">Media</p>
     <p class="nav_link" @click="scroll_to('schedule_anchor')">Schedule</p>
     <p class="nav_link" @click="scroll_to('links_anchor')">Links</p>
   </nav>
