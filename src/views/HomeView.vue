@@ -4,15 +4,17 @@ import ScheduleComponent from "@/components/text/ScheduleComponent.vue";
 import AboutComponent from "@/components/text/AboutComponent.vue";
 import TeachersComponent from "@/components/text/TeachersComponent.vue";
 import MediaComponent from "@/components/text/MediaComponent.vue";
+import LinksComponent from "@/components/text/LinksComponent.vue";
 </script>
 
 <template>
   <video-embed/>
   <div class="feed">
     <about-component/>
+    <media-component/>
     <teachers-component/>
     <schedule-component/>
-    <media-component/>
+    <links-component/>
   </div>
 </template>
 

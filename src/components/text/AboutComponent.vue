@@ -17,17 +17,16 @@ const curr_api = inject("curr_api");
     <h1>YVR Shufflers</h1>
     <p>
       Join Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
-      and grow the art of shuffle.
+      and grow the art of shuffle.<br>
       Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
     </p>
     <p>
       Our mission is to foster a welcoming and inclusive environment for everyone passionate about shuffle dance.<br>
       We’re always open to collaborations with fellow shufflers, creators, and dance enthusiasts. <br>
     </p>
-<!--    <p>-->
-<!--      Whether you’re looking for group sessions, community events, or opportunities to collaborate, YVR-->
-<!--      Shufflers is the perfect space to connect with like-minded dancers.-->
-<!--    </p>-->
+    <p>
+      Meetups are <strong>free</strong> and <strong>open to everyone</strong>!<br>
+    </p>
     <p style="margin-top: 15px;color: white;font-weight: 400">
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
@@ -49,7 +48,10 @@ const curr_api = inject("curr_api");
   line-height: 1.8em;
   color: #d9d9d9;
 }
+
 .text_block strong {
-  font-weight: 500;
+  font-weight: 800;
+  padding: 2px;
+  color: #80aaff;
 }
 </style>

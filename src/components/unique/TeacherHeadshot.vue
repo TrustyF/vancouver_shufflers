@@ -51,9 +51,10 @@ const curr_api = inject("curr_api");
   border-radius: 50%;
 }
 .teach_head_wrapper h1 {
-  font-weight: 800;
-  font-size: 1.5em;
-  letter-spacing: 1px
+  font-weight: 300;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  /*background-color: rgba(255,255,255,0.1);*/
 }
 
 .teach_head_wrapper h4 {

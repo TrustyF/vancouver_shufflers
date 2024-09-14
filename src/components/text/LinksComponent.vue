@@ -1,6 +1,5 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
-import CarouselComponent from "@/components/generic/CarouselComponent.vue";
 
 let props = defineProps({
   test: {
@@ -14,9 +13,13 @@ const curr_api = inject("curr_api");
 </script>
 
 <template>
-  <div class="text_block" id="media_anchor">
-    <h1>Media</h1>
-    <carousel-component/>
+  <div class="text_block" id="links_anchor">
+    <h1>Links</h1>
+    <p>
+      YVR Shufflers is Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to celebrate
+      and grow the art of shuffle.
+      Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
+    </p>
   </div>
 </template>
 

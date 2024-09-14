@@ -1,7 +1,6 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
 import {RouterLink} from 'vue-router'
-import Logo_simple from "@/components/svg/logo_simple.vue";
 import Logo_full from "/src/assets/YVR_Shufflers_Logo_Lockup_Horizontal.svg";
 
 let props = defineProps({
@@ -15,7 +14,7 @@ let is_mobile = inject('is_mobile')
 
 function scroll_to(className) {
   let elem = window.document.getElementById(className)
-  elem.scrollIntoView({behavior: 'smooth'})
+  elem.scrollIntoView({behavior: 'smooth',block:"center"})
 }
 
 </script>
@@ -23,15 +22,16 @@ function scroll_to(className) {
 <template>
   <nav id="nav_bar">
     <img :src="Logo_full" class="logo_full" alt="logo">
-    <p class="nav_link" @click="scroll_to('teacher_anchor')">Teachers</p>
-    <p class="nav_link" @click="scroll_to('schedule_anchor')">Schedule</p>
     <p class="nav_link" @click="scroll_to('media_anchor')">Media</p>
+    <p class="nav_link" @click="scroll_to('schedule_anchor')">Schedule</p>
+    <p class="nav_link" @click="scroll_to('links_anchor')">Links</p>
   </nav>
 </template>
 
 <style scoped>
 nav {
   z-index: 1000;
+  margin-top: 20px;
 
   position: relative;
   display: flex;

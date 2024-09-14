@@ -42,7 +42,7 @@ function sel_rand() {
   last_video = selected
 
   curr_video.value = selected
-  console.log('selecting',curr_video.value)
+  // console.log('selecting', curr_video.value)
 }
 
 onBeforeMount(() => {
@@ -69,7 +69,7 @@ onBeforeMount(() => {
 
 <style scoped>
 .spacer {
-  height: 600px;
+  height: 500px;
 }
 
 .video_embed_wrapper {
@@ -82,6 +82,7 @@ onBeforeMount(() => {
 }
 
 .video_embed {
+  /*outline: 1px solid red;*/
   -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0)));
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%);
 }

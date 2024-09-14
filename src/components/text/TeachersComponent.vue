@@ -4,6 +4,8 @@ import TeacherHeadshot from "@/components/unique/TeacherHeadshot.vue";
 
 import turtle from '/src/assets/headshots/turtle.png'
 import anthony from '/src/assets/headshots/anthony.jpeg'
+import erin from '/src/assets/headshots/erin.jpeg'
+import gab from '/src/assets/headshots/gab.jpeg'
 
 let props = defineProps({
   test: {
@@ -29,12 +31,12 @@ const curr_api = inject("curr_api");
           name="Turtle"
           title="Teacher"/>
       <teacher-headshot
-          :image="turtle"
+          :image="erin"
           name="Erin"
           title="Teacher"/>
       <teacher-headshot
-          :image="turtle"
-          name="Gabby"
+          :image="gab"
+          name="Gabriella"
           title="Teacher"/>
     </div>
 
