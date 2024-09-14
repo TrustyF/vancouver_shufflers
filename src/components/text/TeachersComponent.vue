@@ -2,10 +2,10 @@
 import {inject, onMounted, watch, ref, computed} from "vue";
 import TeacherHeadshot from "@/components/unique/TeacherHeadshot.vue";
 
-import turtle from '/src/assets/headshots/turtle.png'
-import anthony from '/src/assets/headshots/anthony.jpeg'
-import erin from '/src/assets/headshots/erin.jpeg'
-import gab from '/src/assets/headshots/gab.jpeg'
+import turtle from '/src/assets/headshots/turtle.webp'
+import anthony from '/src/assets/headshots/anthony.webp'
+import erin from '/src/assets/headshots/erin.webp'
+import gab from '/src/assets/headshots/gab.webp'
 
 let props = defineProps({
   test: {
@@ -25,18 +25,22 @@ const curr_api = inject("curr_api");
       <teacher-headshot
           :image="anthony"
           name="Anthony"
+          handle="vancityshuffler"
           title="Teacher"/>
       <teacher-headshot
           :image="turtle"
           name="Turtle"
+          handle="turtleteplitsky"
           title="Teacher"/>
       <teacher-headshot
           :image="erin"
           name="Erin"
+          handle="erinlai212"
           title="Teacher"/>
       <teacher-headshot
           :image="gab"
           name="Gabriella"
+          handle="gabriellagloria_"
           title="Teacher"/>
     </div>
 

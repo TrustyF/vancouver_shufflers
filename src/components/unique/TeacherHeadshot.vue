@@ -1,5 +1,6 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
+import {openNewTab} from "@/scripts/helpers.js";
 
 let props = defineProps({
   name: {
@@ -14,6 +15,10 @@ let props = defineProps({
     type: String,
     default: null,
   },
+  handle: {
+    type: String,
+    default: null,
+  },
 });
 let emits = defineEmits(["test"]);
 const curr_api = inject("curr_api");
@@ -22,10 +27,11 @@ const curr_api = inject("curr_api");
 
 <template>
   <div class="teach_head_wrapper">
-    <img :src="image" class="headshot" alt="headshot">
-    <div>
+    <img :src="image" class="headshot" alt="headshot" @click="openNewTab(`https://www.instagram.com/${handle}/`)">
+    <div style="display:flex;flex-flow: column;justify-content: center;gap: 0">
       <h1>{{ name }}</h1>
-<!--      <h4>{{ title }}</h4>-->
+      <h4 class="bi-instagram">
+        {{handle}}</h4>
     </div>
   </div>
 </template>
@@ -49,17 +55,32 @@ const curr_api = inject("curr_api");
   width: 150px;
   object-fit: cover;
   border-radius: 50%;
+
+  cursor: pointer;
+
+  transition: all 200ms cubic-bezier(0.0, 1.0, 1.0, 1.0); /* custom */
+}
+.headshot:hover {
+  box-shadow: #3e73dd 0 0 50px;
+  transform: scale(1.05);
 }
 .teach_head_wrapper h1 {
-  font-weight: 300;
-  font-size: 1.2em;
+  font-weight: 500;
+  font-size: 1.5em;
   letter-spacing: 1px;
+  z-index: 10;
   /*background-color: rgba(255,255,255,0.1);*/
 }
 
 .teach_head_wrapper h4 {
-  font-weight: 300;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  color: grey;
   font-size: 0.8em;
-  color: lightgrey;
 }
+
+
 </style>

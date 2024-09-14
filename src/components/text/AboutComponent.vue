@@ -32,7 +32,7 @@ const curr_api = inject("curr_api");
     <p style="margin-top: 15px;color: white;font-weight: 400">
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
-    <p></p>
+
     <carousel-component/>
 
   </div>

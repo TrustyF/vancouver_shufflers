@@ -21,7 +21,7 @@ export async function log_event(name, type, info = null) {
 
     if (import.meta.env.DEV) {
         // console.log('dev mode not logging to server')
-        console.log('dev log',params)
+        // console.log('dev log',params)
         return
     }
 

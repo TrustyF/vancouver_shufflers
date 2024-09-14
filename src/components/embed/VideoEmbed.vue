@@ -13,6 +13,15 @@ import video_8 from "/src/assets/videos/insta_11.mp4";
 import video_9 from "/src/assets/videos/insta_12.mp4";
 import video_10 from "/src/assets/videos/insta_13.mp4";
 
+import place_1 from '/src/assets/video_placeholders/placeholder_1.webp'
+import place_2 from '/src/assets/video_placeholders/placeholder_2.webp'
+import place_3 from '/src/assets/video_placeholders/placeholder_3.webp'
+import place_4 from '/src/assets/video_placeholders/placeholder_4.webp'
+import place_5 from '/src/assets/video_placeholders/placeholder_5.webp'
+import place_6 from '/src/assets/video_placeholders/placeholder_6.webp'
+import place_7 from '/src/assets/video_placeholders/placeholder_7.webp'
+import place_8 from '/src/assets/video_placeholders/placeholder_8.webp'
+
 let props = defineProps({
   test: {
     type: String,
@@ -26,6 +35,22 @@ let curr_video = ref('')
 let last_video = null;
 let video_player = ref()
 let height = '800px'
+
+let curr_placeholder = computed(()=>{
+  let arr = [
+    place_1,
+    place_2,
+    place_3,
+    place_4,
+    place_5,
+    place_6,
+    place_7,
+    place_8
+  ]
+
+  return arr[Math.floor(Math.random() * arr.length)];
+
+})
 
 function sel_rand() {
   let arr = [
@@ -51,6 +76,10 @@ function sel_rand() {
   // console.log('selecting', curr_video.value)
 }
 
+function pause(){
+  // video_player.value.player.pause()
+}
+
 onBeforeMount(() => {
   sel_rand()
 })
@@ -63,8 +92,11 @@ onBeforeMount(() => {
           ref="video_player"
           :src="curr_video"
           :loop="false"
+          @playing="pause()"
           @ended="sel_rand"
           class="video_embed"
+          playsWhen="canplaythrough"
+          :poster="curr_placeholder"
       >
       </video-background>
   </div>

@@ -12,7 +12,7 @@ import LinksComponent from "@/components/text/LinksComponent.vue";
     <about-component/>
     <teachers-component/>
     <schedule-component/>
-    <links-component/>
+<!--    <links-component/>-->
   </div>
 </template>
 
