@@ -19,11 +19,12 @@ let google_api = import.meta.env.VITE_GOOGLE_MAP_API
   <iframe
         title="google_maps"
           height="450"
-          style="border:0"
+          style="border:0;width: 100%"
           loading="lazy"
           allowfullscreen
           referrerpolicy="no-referrer-when-downgrade"
-          :src="`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJEyBekX9xhlQRUlReRspXBtI&key=${google_api}`"></iframe>
+          :src="`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJEyBekX9xhlQRUlReRspXBtI&key=${google_api}`">
+  </iframe>
 </template>
 
 <style scoped>

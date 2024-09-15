@@ -22,7 +22,7 @@ axiosRetry(axios, {
 });
 
 app.use(VueLazyload, {
-    preLoad: 1,
+    preLoad: 1.5,
     lazyComponent: true,
 })
 

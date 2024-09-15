@@ -10,26 +10,13 @@ import CarouselComponent from "@/components/generic/CarouselComponent.vue";
 <template>
   <video-embed/>
   <div class="feed">
-
-    <lazy-component>
-      <about-component/>
-    </lazy-component>
-
-    <lazy-component>
-      <div class="grouper">
-        <links-component/>
-        <carousel-component/>
-      </div>
-    </lazy-component>
-
-    <lazy-component>
-      <teachers-component/>
-    </lazy-component>
-
-    <lazy-component>
-      <schedule-component/>
-    </lazy-component>
-
+    <about-component/>
+    <div class="grouper">
+      <links-component/>
+      <carousel-component/>
+    </div>
+    <teachers-component/>
+    <schedule-component/>
   </div>
 </template>
 

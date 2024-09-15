@@ -32,11 +32,12 @@ let emits = defineEmits(["test"]);
 const curr_api = inject("curr_api");
 
 let curr_video = ref('')
+let curr_placeholder = ref('')
 let last_video = null;
 let video_player = ref()
 let height = '800px'
 
-let curr_placeholder = computed(()=>{
+function sel_placeholder(){
   let arr = [
     place_1,
     place_2,
@@ -48,9 +49,9 @@ let curr_placeholder = computed(()=>{
     place_8
   ]
 
-  return arr[Math.floor(Math.random() * arr.length)];
+  curr_placeholder.value = arr[Math.floor(Math.random() * arr.length)];
 
-})
+}
 
 function sel_rand() {
   let arr = [
@@ -73,6 +74,7 @@ function sel_rand() {
   last_video = selected
 
   curr_video.value = selected
+  sel_placeholder()
   // console.log('selecting', curr_video.value)
 }
 
@@ -81,6 +83,7 @@ function pause(){
 }
 
 onBeforeMount(() => {
+  sel_placeholder()
   sel_rand()
 })
 </script>
@@ -108,6 +111,7 @@ onBeforeMount(() => {
 }
 
 .video_embed_wrapper {
+  pointer-events: none;
   z-index: -1;
   position: absolute;
   left: 0;
@@ -117,6 +121,7 @@ onBeforeMount(() => {
 }
 
 .video_embed {
+  pointer-events: none;
   /*outline: 1px solid red;*/
   height: v-bind(height);
   width: 100%;
@@ -125,5 +130,16 @@ onBeforeMount(() => {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.3) 40%, rgba(0, 0, 0, 0) 100%);
 }
 
+@media only screen and (max-width: 660px) {
+  .spacer {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .spacer {
+    height: 400px;
+  }
+}
 
 </style>

@@ -43,7 +43,6 @@ const curr_api = inject("curr_api");
           handle="gabriellagloria_"
           title="Teacher"/>
     </div>
-
   </div>
 </template>
 

@@ -34,24 +34,52 @@ const curr_api = inject("curr_api");
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
 
+    <div class="overflow_guard">
+      <div class="background"></div>
+    </div>
+
   </div>
 </template>
 
 <style scoped>
 .text_block {
+  position: relative;
   display: flex;
   flex-flow: column;
   gap: 10px;
 }
+.overflow_guard {
+  /*outline: 1px solid red;*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100vw;
+  height: 200%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 33%;
+  width: 200vw;
+  background-color: rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+}
 
 .text_block h1 {
   font-weight: 800;
+  z-index: 5;
 }
 
 .text_block p {
   font-weight: 300;
   line-height: 1.8em;
   color: #d9d9d9;
+  z-index: 5;
 }
 
 .text_block strong {

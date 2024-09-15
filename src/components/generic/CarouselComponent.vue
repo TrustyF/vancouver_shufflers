@@ -34,11 +34,9 @@ onMounted(() => {
 
 <template>
   <div class="image_frame">
-
-    <transition-group name="fade">
-      <img :src="image_paths[img_index]" loading="lazy" :key="img_index" alt="Fading Image"/>
-    </transition-group>
-
+      <transition-group name="fade">
+        <img :src="image_paths[img_index]" loading="lazy" :key="img_index" alt="Fading Image"/>
+      </transition-group>
   </div>
 </template>
 

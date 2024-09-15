@@ -27,7 +27,7 @@ const curr_api = inject("curr_api");
 
 <template>
   <div class="teach_head_wrapper">
-    <img :src="image" class="headshot" alt="headshot" @click="openNewTab(`https://www.instagram.com/${handle}/`)">
+    <img v-lazy="image" class="headshot" loading="lazy" alt="headshot" @click="openNewTab(`https://www.instagram.com/${handle}/`)">
     <div style="display:flex;flex-flow: column;justify-content: center;gap: 0">
       <h1>{{ name }}</h1>
       <h4 class="bi-instagram">
