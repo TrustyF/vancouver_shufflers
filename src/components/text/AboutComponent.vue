@@ -49,7 +49,8 @@ const curr_api = inject("curr_api");
   gap: 10px;
 }
 .overflow_guard {
-  /*outline: 1px solid red;*/
+  outline: 1px solid red;
+  pointer-events: none;
   position: absolute;
   left: 50%;
   top: 50%;
