@@ -18,7 +18,7 @@ const curr_api = inject("curr_api");
     <div @click="openNewTab('https://www.instagram.com/yvrshufflers/')" class="insta_bg">
       <p class="bi-instagram insta_btn">Instagram</p>
     </div>
-    <div @click="openNewTab('https://www.instagram.com/yvrshufflers/')" class="fb_bg">
+    <div @click="openNewTab('https://www.facebook.com/groups/465104400560475')" class="fb_bg">
       <p class="bi-facebook insta_btn">Facebook</p>
     </div>
   </div>
