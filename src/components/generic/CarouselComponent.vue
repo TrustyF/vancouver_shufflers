@@ -1,5 +1,6 @@
 <script setup>
 import {ref, computed, onMounted, onBeforeMount} from "vue";
+import {log_event} from "@/scripts/log_events.js";
 
 let image_paths = computed(() => {
   let array = []
@@ -46,6 +47,11 @@ const startSlideshow = () => {
   interval_ref = setInterval(() => move_slide(1), 5000);
 };
 
+function handle_arrow_nav(amount){
+  move_slide(amount,true)
+  log_event('image_nav','nav', img_index.value)
+}
+
 onMounted(() => {
   startSlideshow()
 })
@@ -60,8 +66,8 @@ onMounted(() => {
     </transition>
 
     <div class="arrow_nav">
-      <div class="arrow bi-arrow-left" @click="move_slide(-1,true)"></div>
-      <div class="arrow right bi-arrow-right" @click="move_slide(1,true)"></div>
+      <div class="arrow bi-arrow-left" @click="handle_arrow_nav(-1)"></div>
+      <div class="arrow right bi-arrow-right" @click="handle_arrow_nav(1)"></div>
     </div>
 
   </div>
