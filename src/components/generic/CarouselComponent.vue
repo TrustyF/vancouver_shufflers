@@ -3,8 +3,8 @@ import {ref, computed, onMounted, onBeforeMount} from "vue";
 
 let image_paths = computed(() => {
   let array = []
-  for (let i = 0; i < 10; i++) {
-    array.push(new URL(`/src/assets/pictures/pic_${i}.webp`, import.meta.url))
+  for (let i = 0; i <= 11; i++) {
+    array.push(`https://firebasestorage.googleapis.com/v0/b/vancouver-shufflers-5d383.appspot.com/o/pictures%2Fpic_${i}.jpg?alt=media&token=78501dd5-d94b-4f84-87b4-30d50d3540ba`)
   }
 
   for (let i = array.length - 1; i >= 0; i--) {
@@ -16,14 +16,34 @@ let image_paths = computed(() => {
 })
 
 let img_index = ref(0)
+let interval_ref
+let restart_timeout_ref
+
+function move_slide(amount, manual = false) {
+
+  let arr_len = image_paths.value.length
+
+  if (manual) {
+
+    clearInterval(interval_ref)
+
+    if (!restart_timeout_ref) restart_timeout_ref = setTimeout(() => {
+
+      startSlideshow();
+      restart_timeout_ref = undefined
+
+    }, 5000)
+  }
+
+  img_index.value += amount;
+
+  if (img_index.value < 0) img_index.value = arr_len - 1
+  if (img_index.value > arr_len - 1) img_index.value = 0
+
+}
 
 const startSlideshow = () => {
-  setInterval(() => {
-
-    img_index.value += 1;
-    if (img_index.value >= image_paths.value.length) img_index.value = 0
-
-  }, 4000);
+  interval_ref = setInterval(() => move_slide(1), 5000);
 };
 
 onMounted(() => {
@@ -34,9 +54,16 @@ onMounted(() => {
 
 <template>
   <div class="image_frame">
-      <transition-group name="fade">
-        <img :src="image_paths[img_index]" loading="lazy" :key="img_index" alt="Fading Image"/>
-      </transition-group>
+
+    <transition name="fade">
+        <img class="carousel_img" :src="image_paths[img_index]" :key="img_index" alt=""/>
+    </transition>
+
+    <div class="arrow_nav">
+      <div class="arrow bi-arrow-left" @click="move_slide(-1,true)"></div>
+      <div class="arrow right bi-arrow-right" @click="move_slide(1,true)"></div>
+    </div>
+
   </div>
 </template>
 
@@ -47,18 +74,19 @@ onMounted(() => {
   width: 100%;
   aspect-ratio: 1.75;
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.image_frame img {
+.carousel_img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
 
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 2000ms ease-in-out;
+  transition: opacity 1000ms ease-in-out;
 }
 
 .fade-enter-from {
@@ -69,5 +97,52 @@ onMounted(() => {
   opacity: 0;
 }
 
+.arrow_nav {
+  display: flex;
+  flex-flow: row nowrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
 
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.arrow {
+  display: flex;
+  flex-flow: row nowrap;
+
+  align-items: center;
+  cursor: pointer;
+  top: 50%;
+  width: 10%;
+  height: 100%;
+  font-size: 2em;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 200ms ease;
+}
+
+.arrow:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.right {
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 1000px) {
+  .arrow {
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 660px) {
+  .arrow {
+    width: 20%;
+  }
+}
 </style>
