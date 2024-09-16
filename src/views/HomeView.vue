@@ -11,7 +11,7 @@ import CarouselComponent from "@/components/generic/CarouselComponent.vue";
   <video-embed/>
   <div class="feed">
     <about-component/>
-    <div class="grouper">
+    <div class="grouper" id="carousel_anchor">
       <links-component/>
       <carousel-component/>
     </div>
