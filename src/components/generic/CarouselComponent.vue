@@ -86,7 +86,7 @@ onMounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 1000ms ease-in-out;
+  transition: opacity 1000ms ease;
 }
 
 .fade-enter-from {
