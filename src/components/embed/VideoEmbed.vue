@@ -37,7 +37,7 @@ let last_video = null;
 let video_player = ref()
 let height = '800px'
 
-function sel_placeholder(){
+function sel_placeholder() {
   let arr = [
     place_1,
     place_2,
@@ -78,8 +78,8 @@ function sel_rand() {
   // console.log('selecting', curr_video.value)
 }
 
-function pause(){
-  // video_player.value.player.pause()
+function pause() {
+  if (import.meta.env.DEV) video_player.value.player.pause()
 }
 
 onBeforeMount(() => {
@@ -91,17 +91,17 @@ onBeforeMount(() => {
 <template>
   <div class="spacer"></div>
   <div class="video_embed_wrapper">
-      <video-background
-          ref="video_player"
-          :src="curr_video"
-          :loop="false"
-          @playing="pause()"
-          @ended="sel_rand"
-          class="video_embed"
-          playsWhen="canplaythrough"
-          :poster="curr_placeholder"
-      >
-      </video-background>
+    <video-background
+        ref="video_player"
+        :src="curr_video"
+        :loop="false"
+        @playing="pause"
+        @ended="sel_rand"
+        class="video_embed"
+        playsWhen="canplaythrough"
+        :poster="curr_placeholder"
+    >
+    </video-background>
   </div>
 </template>
 

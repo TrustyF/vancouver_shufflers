@@ -22,7 +22,7 @@ const get_geo = async () => {
 
     // console.log('getting geo')
 
-    let geolocation = axios.get(geo_url,{params:{'ip':ip}})
+    let geolocation = axios.get(geo_url, {params: {'ip': ip}})
         .then(geo => geo.data)
         .catch(err => null)
 

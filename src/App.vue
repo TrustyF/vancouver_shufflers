@@ -2,15 +2,8 @@
 import {RouterView} from 'vue-router'
 import NavBar from "@/components/generic/NavBar.vue";
 import BottomFooter from "@/components/generic/BottomFooter.vue";
-import {nextTick, onMounted} from "vue";
-import {useRoute} from "vue-router";
-import {log_event} from "@/scripts/log_events.js";
-
-let route = useRoute()
-
-function track_leave() {
-  log_event('page_leave', 'nav', `from:${route.name}`)
-}
+import {onMounted} from "vue";
+import {log_event, ping_user_leave} from "@/scripts/log_events.js";
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
@@ -39,8 +32,9 @@ function track_elements_observer() {
 }
 
 onMounted(() => {
-  window.addEventListener('beforeunload', track_leave)
   track_elements_observer()
+  ping_user_leave()
+  setInterval(() => ping_user_leave(), 5000)
 })
 
 </script>
