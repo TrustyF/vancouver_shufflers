@@ -6,7 +6,7 @@ let server_url = ' https://analytics-trustyfox.pythonanywhere.com'
 
 const get_geo = async () => {
 
-    // console.log('getting ip')
+    // console.log('getting geo')
 
     let url = 'https://api.ipify.org?format=json';
     let geo_url = `${server_url}/event/geo_locate`

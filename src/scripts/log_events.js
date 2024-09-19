@@ -20,8 +20,7 @@ export async function log_event(name, type, info = null) {
     }
 
 
-    if (import.meta.env.DEV) {
-        // console.log('dev mode not logging to server')
+    if (import.meta.env.DEV && curr_api !== local_url) {
         console.log('dev log', params)
         return
     }
@@ -30,9 +29,7 @@ export async function log_event(name, type, info = null) {
         .then(resp => {
             console.log('successfully logged event')
         })
-        .catch(error => {
-            console.log(error)
-        })
+        .catch(error => null)
 }
 
 export async function ping_user_leave() {
@@ -46,15 +43,11 @@ export async function ping_user_leave() {
     }
 
 
-    if (import.meta.env.DEV) {
-        // console.log('dev mode not logging to server')
-        // console.log('dev log', params)
+    if (import.meta.env.DEV && curr_api !== local_url) {
         return
     }
 
     axios.put(url, params)
-        .then(resp => {
-            console.log('successfully alive event')
-        })
+        .then(resp => null)
         .catch(error => null)
 }

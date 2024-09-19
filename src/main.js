@@ -16,7 +16,7 @@ const app = createApp(App)
 
 axiosRetry(axios, {
     retryDelay: ((count) => count * 500),
-    retries: 3,
+    retries: import.meta.env.DEV ? 0 : 5,
     onRetry: ((retryCount, error) => console.log('retry', retryCount, error.message, error.code)),
     retryCondition: ((error) => true)
 });
