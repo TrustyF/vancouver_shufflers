@@ -1,6 +1,7 @@
 <script setup>
 import {ref, computed, onMounted, onBeforeMount} from "vue";
 import {log_event} from "@/scripts/log_events.js";
+import ShoeLoader from "@/components/generic/ShoeLoader.vue";
 
 let image_paths = computed(() => {
   let array = []
@@ -61,7 +62,7 @@ onMounted(() => {
 <template>
   <div class="image_frame">
 
-    <transition name="fade">
+    <transition name="fade" mode="in-out">
         <img class="carousel_img" :src="image_paths[img_index]" :key="img_index" alt=""/>
     </transition>
 
@@ -69,6 +70,8 @@ onMounted(() => {
       <div class="arrow bi-arrow-left" @click="handle_arrow_nav(-1)"></div>
       <div class="arrow right bi-arrow-right" @click="handle_arrow_nav(1)"></div>
     </div>
+
+    <shoe-loader/>
 
   </div>
 </template>

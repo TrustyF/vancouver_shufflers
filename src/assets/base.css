@@ -62,13 +62,14 @@ body {
     min-height: 100vh;
     /*background: var(--color-background);*/
 
-    background: radial-gradient(circle at bottom left, #3e73dd -50%, transparent 50%),
-    radial-gradient(circle at 50% -20%, #7e1863 -20%, transparent 70%),
-    radial-gradient(circle at bottom right, #271954 20%, transparent 50%),
+    background: radial-gradient(circle at bottom left, #3e73dd -80%, transparent 40%),
+    radial-gradient(circle at 50% 0, #7e1863 -50%, transparent 100%),
+    radial-gradient(circle at bottom right, #472e99 -50%, transparent 50%),
     black;
+    background-attachment: fixed;
 
-    transition: color 0.5s,
-    background-color 0.5s;
+    /*transition: color 0.5s,*/
+    /*background 0.5s;*/
 
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

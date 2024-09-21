@@ -11,7 +11,6 @@ import video_6 from "/src/assets/videos/insta_9.mp4";
 import video_7 from "/src/assets/videos/insta_10.mp4";
 import video_8 from "/src/assets/videos/insta_11.mp4";
 import video_9 from "/src/assets/videos/insta_12.mp4";
-import video_10 from "/src/assets/videos/insta_13.mp4";
 
 import place_1 from '/src/assets/video_placeholders/placeholder_1.webp'
 import place_2 from '/src/assets/video_placeholders/placeholder_2.webp'
@@ -65,7 +64,6 @@ function sel_rand() {
     video_7,
     video_8,
     video_9,
-    video_10,
   ]
   let available_videos = arr.filter(s => s !== last_video);
 
@@ -89,7 +87,7 @@ onBeforeMount(() => {
 </script>
 
 <template>
-  <div class="spacer"></div>
+<!--  <div class="spacer"></div>-->
   <div class="video_embed_wrapper">
     <video-background
         ref="video_player"

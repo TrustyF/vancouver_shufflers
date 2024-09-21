@@ -1,6 +1,6 @@
 <script setup>
 import {inject, onMounted, watch, ref, computed} from "vue";
-import MapEmbed from "@/components/embed/MapEmbed.vue";
+import CalendarEmbed from "@/components/embed/CalendarEmbed.vue";
 
 let props = defineProps({
   test: {
@@ -15,16 +15,8 @@ const curr_api = inject("curr_api");
 
 <template>
   <div class="text_block" id="schedule_anchor">
-    <h1>Schedule</h1>
-
-    <div style="margin-bottom: 10px">
-      <p>
-        Meetups happen every <strong>wednesday</strong> from <strong>6 to 8 pm</strong> at Robson Square ice rink
-        or the <strong style="color: #ff0090">red coil statue</strong> up the stairs
-      </p>
-    </div>
-
-    <map-embed/>
+<!--    <h1>Schedule</h1>-->
+    <calendar-embed/>
   </div>
 </template>
 
@@ -47,7 +39,10 @@ const curr_api = inject("curr_api");
 
 .text_block strong {
   font-weight: 800;
-  padding: 2px;
+  padding: 5px;
   color: #80aaff;
+}
+.map_link:visited {
+  color: white;
 }
 </style>

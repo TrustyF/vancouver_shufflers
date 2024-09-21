@@ -1,35 +1,46 @@
 <script setup>
-import VideoEmbed from "@/components/embed/VideoEmbed.vue";
-import ScheduleComponent from "@/components/text/ScheduleComponent.vue";
-import AboutComponent from "@/components/text/AboutComponent.vue";
+import ScheduleComponent from "@/components/text/EventsComponent.vue";
+import HeadingComponent from "@/components/text/HeadingComponent.vue";
 import TeachersComponent from "@/components/text/TeachersComponent.vue";
 import LinksComponent from "@/components/text/LinksComponent.vue";
 import CarouselComponent from "@/components/generic/CarouselComponent.vue";
+import AboutComponent from "@/components/text/AboutComponent.vue";
 </script>
 
 <template>
-  <video-embed/>
   <div class="feed">
-    <about-component/>
+    <div class="spacer"></div>
+    <heading-component/>
     <div class="grouper" id="carousel_anchor">
       <links-component/>
       <carousel-component/>
     </div>
     <teachers-component/>
-    <schedule-component/>
+    <about-component/>
   </div>
 </template>
 
 <style scoped>
-.feed {
-  display: flex;
-  flex-flow: column;
-  gap: 50px;
-}
 
 .grouper {
   display: flex;
   flex-flow: column;
   gap: 20px;
+}
+
+.spacer {
+  height: 500px;
+}
+
+@media only screen and (max-width: 660px) {
+  .spacer {
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .spacer {
+    height: 400px;
+  }
 }
 </style>

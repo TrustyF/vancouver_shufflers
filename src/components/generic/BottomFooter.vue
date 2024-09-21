@@ -5,6 +5,7 @@ import {inject, onMounted, watch, ref, computed} from "vue";
 
 <template>
   <div class="footer_container">
+    <div class="spacer"></div>
     <h3 class="bottom_footer">By Arthur Sirjacobs. 2024</h3>
   </div>
 </template>
@@ -16,12 +17,18 @@ import {inject, onMounted, watch, ref, computed} from "vue";
   left: 0;
   bottom: 0;
   display: flex;
+  flex-flow: column;
   width: 100%;
   justify-content: center;
+  align-items: center;
   margin: 10px 0 20px 0;
 }
 .bottom_footer {
   font-size: 0.7em;
   opacity: 50%;
+}
+.spacer {
+  /*outline: 1px solid;*/
+  height: 5vh;
 }
 </style>

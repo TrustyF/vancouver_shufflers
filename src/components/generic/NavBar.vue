@@ -14,7 +14,7 @@ let is_mobile = inject('is_mobile')
 
 function scroll_to(className) {
   let elem = window.document.getElementById(className)
-  elem.scrollIntoView({behavior: 'smooth',block:"center"})
+  elem.scrollIntoView({behavior: 'smooth', block: "center"})
 }
 
 </script>
@@ -22,8 +22,9 @@ function scroll_to(className) {
 <template>
   <nav id="nav_bar">
     <img :src="Logo_full" class="logo_full" alt="logo">
-    <p class="nav_link" @click="scroll_to('schedule_anchor')">Schedule</p>
-<!--    <p class="nav_link" @click="scroll_to('links_anchor')">Links</p>-->
+    <router-link to="/" class="nav_link">Home</router-link>
+    <router-link to="/location" class="nav_link">Location</router-link>
+    <router-link to="/events" class="nav_link">Events</router-link>
   </nav>
 </template>
 
@@ -31,6 +32,7 @@ function scroll_to(className) {
 nav {
   z-index: 1000;
   margin-top: 20px;
+  margin-bottom: 20px;
 
   position: relative;
   display: flex;
@@ -50,32 +52,51 @@ nav {
 }
 
 .nav_link {
-  color: white;
+  color: lightgrey;
   padding: 40px;
   font-size: 1em;
   font-weight: 400;
   letter-spacing: 1px;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-color: transparent;
+  transition: 200ms ease;
 }
 
-.nav_link:hover {
-  text-decoration: underline;
+.nav_link:hover, .router-link-active {
+  color: white;
+  text-decoration-color: white;
 }
 
 @media only screen and (max-width: 1000px) {
+  nav {
+    flex-flow: row wrap;
+    height: auto;
+    gap: 10px;
+  }
+
+  .logo_full {
+    width: 40%;
+    height: unset;
+    padding: 0;
+  }
 }
 
 @media only screen and (max-width: 660px) {
   nav {
-    flex-flow: column;
+    flex-flow: row wrap;
+    height: auto;
+    gap: 10px;
+    justify-content: space-between;
   }
   .nav_link {
-    visibility: hidden;
+    padding: 10px;
   }
   .logo_full {
     width: 100%;
     height: unset;
+    padding: 0;
   }
 }
 </style>

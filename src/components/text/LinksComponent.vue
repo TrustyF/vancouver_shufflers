@@ -21,6 +21,9 @@ const curr_api = inject("curr_api");
     <div @click="openNewTab('https://www.facebook.com/groups/465104400560475')" class="fb_bg">
       <p class="bi-facebook insta_btn">Facebook</p>
     </div>
+    <div @click="openNewTab('mailto:yvrshufflers@outlook.com')" class="email_bg">
+      <p class="bi-envelope-fill insta_btn">yvrshufflers@outlook.com</p>
+    </div>
   </div>
 </template>
 
@@ -42,8 +45,13 @@ const curr_api = inject("curr_api");
 .fb_bg {
   border-radius: 30px;
   padding: 2px;
-  background: #00c6ff;
   background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.email_bg {
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(to right, #2fff00, #00b309);
 }
 
 .insta_btn {

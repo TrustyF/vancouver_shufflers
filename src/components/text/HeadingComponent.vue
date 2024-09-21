@@ -16,27 +16,29 @@ const curr_api = inject("curr_api");
 
 <template>
   <div class="text_block">
-    <h1> Mission </h1>
+    <h1>YVR Shufflers</h1>
     <p>
-      YVR Shufflers exists to foster a love for shuffle dance and create a vibrant, supportive environment where dancers
-      of all skill levels can thrive. <br> We believe in the power of dance to connect people and spread joy.
+      Join Vancouver’s vibrant shuffle dance community, bringing together dancers of <strong>all levels</strong> to
+      celebrate
+      and grow the art of shuffle.<br>
+      Whether you’re a seasoned dancer or just getting started, our group is here to support your journey.
     </p>
-  </div>
-  <div class="text_block">
-    <h1> Story </h1>
     <p>
-      YVR Shufflers began as a small group of dancers meeting up in Vancouver’s parks. <br> Over time, we’ve grown into a
-      tight-knit community, bringing together passionate dancers, collaborating with DJs, and participating in local
-      events and festivals. <br> Today, we’re not just a dance group—we’re a movement.
+      Our mission is to foster a welcoming and inclusive environment for everyone passionate about shuffle dance.<br>
+      We’re always open to collaborations with fellow shufflers, creators, and dance enthusiasts. <br>
     </p>
+    <p>
+      Meetups are <strong>free</strong> and <strong>open to everyone</strong>!<br>
+    </p>
+    <p style="margin-top: 15px;color: white;font-weight: 400">
+      Join us and become part of Vancouver’s growing shuffle dance scene!
+    </p>
+
+<!--    <div class="overflow_guard">-->
+<!--      <div class="background"></div>-->
+<!--    </div>-->
+
   </div>
-<!--  <div class="text_block">-->
-<!--    <h1> Community values </h1>-->
-<!--    <p>-->
-<!--      At YVR Shufflers, we promote creativity, inclusivity, and growth. Whether you’re here to master the Melbourne-->
-<!--      Shuffle or just to have fun, there’s a place for you in our crew.-->
-<!--    </p>-->
-<!--  </div>-->
 </template>
 
 <style scoped>
@@ -46,7 +48,6 @@ const curr_api = inject("curr_api");
   flex-flow: column;
   gap: 10px;
 }
-
 .overflow_guard {
   /*outline: 1px solid red;*/
   pointer-events: none;
@@ -85,6 +86,6 @@ const curr_api = inject("curr_api");
 .text_block strong {
   font-weight: 800;
   padding: 2px;
-  color: #80aaff;
+  color: #6699ff;
 }
 </style>
