@@ -13,7 +13,7 @@ import {inject, onMounted, watch, ref, computed} from "vue";
 <style scoped>
 .footer_container {
   /*outline: 1px solid red;*/
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   display: flex;
@@ -22,7 +22,7 @@ import {inject, onMounted, watch, ref, computed} from "vue";
   justify-content: center;
   align-items: center;
   /*margin: 10px 0 20px 0;*/
-  padding: 10px;
+  padding: 20px;
   margin-top: auto;
   /*margin-bottom: 20px;*/
 }
