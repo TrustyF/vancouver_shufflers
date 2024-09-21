@@ -64,15 +64,18 @@ onMounted(() => {
   flex-flow: column;
   gap: 50px;
 }
+
 .video_bg {
   opacity: 1;
   visibility: visible;
   transition: 300ms ease;
 }
+
 .hidden {
   opacity: 0;
   visibility: hidden;
 }
+
 .page-fade-enter-active,
 .page-fade-leave-active {
   transition: transform 500ms ease, opacity 500ms ease;
@@ -82,6 +85,7 @@ onMounted(() => {
   opacity: 0;
   transform: translate(-10%);
 }
+
 .page-fade-leave-to {
   opacity: 0;
   transform: translate(10%);
