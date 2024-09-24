@@ -21,7 +21,7 @@ function track_elements_observer() {
   const elements = []
   elements.push(document.getElementById('teacher_anchor'))
   elements.push(document.getElementById('carousel_anchor'))
-  elements.push(document.getElementById('schedule_anchor'))
+  // elements.push(document.getElementById('schedule_anchor'))
 
   for (let i in elements) {
     if (elements[i] === null) {

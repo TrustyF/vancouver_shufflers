@@ -17,6 +17,7 @@ export async function log_event(name, type, info = null) {
         info: String(info),
         uid: session_seed,
         geo: await geo_location,
+        timestamp: Date.now()
     }
 
 
@@ -40,6 +41,7 @@ export async function ping_user_leave() {
         source: 'shufflers',
         uid: session_seed,
         geo: await geo_location,
+        timestamp: Date.now()
     }
 
 
