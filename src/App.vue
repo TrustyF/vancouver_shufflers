@@ -10,7 +10,7 @@ let router = useRoute()
 
 onMounted(() => {
   ping_user_leave()
-  setInterval(() => ping_user_leave(), 5000)
+  setInterval(() => ping_user_leave(), 50000)
 })
 
 </script>
