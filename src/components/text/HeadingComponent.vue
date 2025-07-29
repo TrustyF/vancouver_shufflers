@@ -28,15 +28,16 @@ const curr_api = inject("curr_api");
       We’re always open to collaborations with fellow shufflers, creators, and dance enthusiasts. <br>
     </p>
     <p>
-      Meetups are <strong>free</strong> and <strong>open to everyone</strong>!<br>
+      Meetups are <strong>free</strong> and <strong>open to everyone</strong> every <strong>wednesday</strong>
+      from <strong>6:00pm to 8:00pm</strong>!<br>
     </p>
     <p style="margin-top: 15px;color: white;font-weight: 400">
       Join us and become part of Vancouver’s growing shuffle dance scene!
     </p>
 
-<!--    <div class="overflow_guard">-->
-<!--      <div class="background"></div>-->
-<!--    </div>-->
+    <!--    <div class="overflow_guard">-->
+    <!--      <div class="background"></div>-->
+    <!--    </div>-->
 
   </div>
 </template>
@@ -48,6 +49,7 @@ const curr_api = inject("curr_api");
   flex-flow: column;
   gap: 10px;
 }
+
 .overflow_guard {
   /*outline: 1px solid red;*/
   pointer-events: none;

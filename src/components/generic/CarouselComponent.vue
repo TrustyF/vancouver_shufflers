@@ -3,19 +3,10 @@ import {ref, computed, onMounted, onBeforeMount} from "vue";
 import {log_event} from "@/scripts/log_events.js";
 import ShoeLoader from "@/components/generic/ShoeLoader.vue";
 
-let image_paths = computed(() => {
-  let array = []
-  for (let i = 0; i <= 11; i++) {
-    array.push(`https://firebasestorage.googleapis.com/v0/b/vancouver-shufflers-5d383.appspot.com/o/pictures%2Fpic_${i}.jpg?alt=media&token=78501dd5-d94b-4f84-87b4-30d50d3540ba`)
-  }
+const images = import.meta.glob('@/assets/carousel_images/*.jpg', {eager: true})
+let image_paths = ref((Object.values(images).map(m => m.default)))
 
-  for (let i = array.length - 1; i >= 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-
-  return array
-})
+console.log(image_paths)
 
 let img_index = ref(0)
 let interval_ref
@@ -48,9 +39,9 @@ const startSlideshow = () => {
   interval_ref = setInterval(() => move_slide(1), 5000);
 };
 
-function handle_arrow_nav(amount){
-  move_slide(amount,true)
-  log_event('image_nav','nav', img_index.value)
+function handle_arrow_nav(amount) {
+  move_slide(amount, true)
+  log_event('image_nav', 'nav', img_index.value)
 }
 
 onMounted(() => {
