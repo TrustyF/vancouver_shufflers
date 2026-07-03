@@ -22,8 +22,8 @@ function scroll_to(className) {
 <template>
   <nav id="nav_bar">
     <img :src="Logo_full" class="logo_full" alt="logo">
-    <router-link to="/" class="nav_link">Home</router-link>
-    <router-link to="/location" class="nav_link">Location</router-link>
+<!--    <router-link to="/" class="nav_link">Home</router-link>-->
+<!--    <router-link to="/location" class="nav_link">Location</router-link>-->
 <!--    <router-link to="/events" class="nav_link">Events</router-link>-->
   </nav>
 </template>

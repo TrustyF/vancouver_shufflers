@@ -4,7 +4,7 @@ import NavBar from "@/components/generic/NavBar.vue";
 import BottomFooter from "@/components/generic/BottomFooter.vue";
 import {onMounted} from "vue";
 import {log_event, ping_user_leave} from "@/scripts/log_events.js";
-import VideoEmbed from "@/components/embed/VideoEmbed.vue";
+// import VideoEmbed from "@/components/embed/VideoEmbed.vue";
 
 let router = useRoute()
 
@@ -18,9 +18,9 @@ onMounted(() => {
 <template>
   <nav-bar/>
 
-  <div :class="router.name==='home'?'video_bg':'video_bg hidden'">
-    <video-embed/>
-  </div>
+<!--  <div :class="router.name==='home'?'video_bg':'video_bg hidden'">-->
+<!--    <video-embed/>-->
+<!--  </div>-->
 
   <router-view v-slot="{ Component }">
     <transition name="page-fade" mode="out-in">

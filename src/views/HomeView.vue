@@ -41,7 +41,6 @@ onMounted(()=>{
 
 <template>
   <div class="feed">
-    <div class="spacer"></div>
     <heading-component/>
     <div class="grouper" id="carousel_anchor">
       <links-component/>
